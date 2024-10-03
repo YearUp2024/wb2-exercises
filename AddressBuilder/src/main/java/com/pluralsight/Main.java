@@ -8,28 +8,16 @@ public class Main {
         System.out.println("Please provide the following information: ");
         String fullName = userInputs("Full name: ");
 
-        String bStreet = userInputs("Billing Street: ");
-        String bCity = userInputs("Bulling City: ");
-        String bState = userInputs("Bulling State: ");
-        String bZip = userInputs("Bulling Zip: ");
-
+        StringBuilder billingAddress = appendingToStringBuilder("Billing");
+        System.out.println("");
+        StringBuilder shippingAddress = appendingToStringBuilder("Shipping");
         System.out.println("");
 
-        String sStreet = userInputs("Shipping Street: ");
-        String sCity = userInputs("Shipping City: ");
-        String sState = userInputs("Shipping State: ");
-        String sZip = userInputs("Shipping Zip: ");
-
+        System.out.println(fullName);
         System.out.println("");
-
-
-        String billingResult = billingFormatting(bStreet, bCity, bState, bZip);
-        String shippingResult = shippingFormatting(sStreet, sCity, sState, sZip);
-
-        System.out.println(fullName + "\n");
-        System.out.println("Billing Address: " + "\n" + billingResult);
+        System.out.println("Billing Address:\n" + billingAddress.toString());
         System.out.println("");
-        System.out.println("Shipping Address: " + "\n" + shippingResult);
+        System.out.println("Shipping Address:\n" + shippingAddress.toString());
     }
 
     public static String userInputs(String input){
@@ -38,15 +26,18 @@ public class Main {
         return userInfo;
     }
 
-    public static String billingFormatting(String bStreet, String bCity, String bState, String bZip) {
-        String billing = bStreet;
-        String otherInfo = bCity + ", " + bState + " " + bZip;
-        return billing + "\n" + otherInfo;
-    }
+    public static StringBuilder appendingToStringBuilder(String addressType){
+        StringBuilder address = new StringBuilder();
+        String street = userInputs(addressType + " Street: ");
+        String city = userInputs(addressType + " City: " );
+        String state = userInputs(addressType + " State: ");
+        String zip = userInputs(addressType + " Zip: ");
 
-    public static String shippingFormatting(String sStreet, String sCity, String sState, String sZip){
-        String shipping = sStreet;
-        String otherInfo = sCity + ", " + sState + " " + sZip;
-        return shipping + "\n" +  otherInfo;
+        address.append(street).append("\n");
+        address.append(city).append(", ");
+        address.append(state).append(" ");
+        address.append(zip);
+
+        return address;
     }
 }
