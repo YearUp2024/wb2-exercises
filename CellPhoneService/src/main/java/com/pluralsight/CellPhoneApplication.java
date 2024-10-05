@@ -11,26 +11,26 @@ public class CellPhoneApplication {
     }
 
     public String userModel(){
-        System.out.println("What model is the phone? ");
+        System.out.println("What is your phone modle? ");
         String model = scanner.nextLine();
         return model;
     }
 
     public String carrier(){
         System.out.println("Who is the carrier? ");
-        String serialNumber = scanner.nextLine();
-        return serialNumber;
+        String carrier = scanner.nextLine();
+        return carrier;
     }
 
-    public int userPhoneNumber(){
+    public String userPhoneNumber(){
         System.out.println("What is the phone number? ");
-        int serialNumber = scanner.nextInt();
-        return serialNumber;
+        String phoneNumber = scanner.nextLine();
+        return phoneNumber;
     }
 
     public String userOwner(){
-        System.out.println("What is the phone number? ");
-        String serialNumber = scanner.nextLine();
-        return serialNumber;
+        System.out.println("Who is the owner? ");
+        String owner = scanner.nextLine();
+        return owner;
     }
 }
