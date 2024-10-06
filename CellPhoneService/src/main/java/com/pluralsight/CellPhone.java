@@ -14,24 +14,24 @@ public class CellPhone {
         this.phoneNumber = phoneNumber;
         this.owner = owner;
     }
-    
-    public void phoneSerialNumber(){
-        System.out.println(this.serialNumber);
+
+    public int getSerialNumber(){
+        return serialNumber;
     }
 
-    public void phoneModel(){
-        System.out.println(this.model);
+    public String getModel(){
+        return model;
     }
 
-    public void phoneCarrier(){
-        System.out.println(this.carrier);
+    public String getCarrier(){
+        return carrier;
     }
 
-    public void phoneNumber(){
-        System.out.println(this.phoneNumber);
+    public String getPhoneNumber(){
+        return phoneNumber;
     }
 
-    public void phoneOwner(){
-        System.out.println(this.owner);
+    public String getOwner(){
+        return owner;
     }
 }
